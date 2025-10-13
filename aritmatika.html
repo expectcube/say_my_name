@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Aritmatika</title>
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #a8ff78, #78ffd6);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 320px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #7c00ff;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        text-align: left;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 2px solid #7c00ff;
+        outline: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #00bcd4;
+        box-shadow: 0 0 6px #00bcd4;
+    }
+
+    .btn-group {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button {
+        flex: 1;
+        margin: 0 5px;
+        background: #7c00ff;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        padding: 10px 0;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #00bcd4;
+        transform: scale(1.05);
+    }
+
+    #hasil {
+        margin-top: 25px;
+        font-size: 18px;
+        color: #333;
+        font-weight: 600;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Aritmatika</h2>
+    <label>Bilangan Pertama :</label>
+    <input type="number" id="bil1">
+    
+    <label>Bilangan Kedua :</label>
+    <input type="number" id="bil2">
+    
+    <label>Bilangan Ketiga :</label>
+    <input type="number" id="bil3">
+
+    <div class="btn-group">
+        <button onclick="jumlahkan()">Jumlahkan</button>
+        <button onclick="kurangkan()">Kurangkan</button>
+        <button onclick="ulang()">Ulang</button>
+    </div>
+
+    <div id="hasil"></div>
+</div>
+
+<script>
+function jumlahkan() {
+    let a = parseFloat(document.getElementById("bil1").value) || 0;
+    let b = parseFloat(document.getElementById("bil2").value) || 0;
+    let c = parseFloat(document.getElementById("bil3").value) || 0;
+    let total = a + b + c;
+    document.getElementById("hasil").innerText = "Hasil Penjumlahan: " + total;
+}
+
+function kurangkan() {
+    let a = parseFloat(document.getElementById("bil1").value) || 0;
+    let b = parseFloat(document.getElementById("bil2").value) || 0;
+    let c = parseFloat(document.getElementById("bil3").value) || 0;
+    let total = a - b - c;
+    document.getElementById("hasil").innerText = "Hasil Pengurangan: " + total;
+}
+
+function ulang() {
+    document.getElementById("bil1").value = "";
+    document.getElementById("bil2").value = "";
+    document.getElementById("bil3").value = "";
+    document.getElementById("hasil").innerText = "";
+}
+</script>
+
+</body>
+</html>
